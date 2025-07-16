@@ -1,11 +1,11 @@
 //Funcionalidad del Login.
 
 //Importamos las funciones de api.
-import { api } from '../js/api.js';
+import { api } from '../js/api';    
 //Importamos las funciones de autenticación.
 import { auth } from '../router/auth.js';
 
-export async function login() {
+export function init() {
     const form = document.getElementById('login-form');
     const emailInput = document.getElementById('login-email');
     const passwordInput = document.getElementById('login-password');
@@ -22,7 +22,7 @@ export async function login() {
         };
 
         try {
-            const users = await api.get('users');
+            const users = await api.getAdmin('users');
             const user = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
 
             if (!user) {
@@ -38,7 +38,8 @@ export async function login() {
             const fakeToken = `${user.username}-${Date.now()}`;
             auth.login(fakeToken, user);
 
-            alert()
+            alert(`Bienvenido, ${user.username}!`);
+            location.hash = "#/dashboard";
 
         } catch (error) {
             console.log("login error:", error);
@@ -47,24 +48,8 @@ export async function login() {
 
     });
 
-    document.getElementById('go-to-resgister').onclick = async e => {
+    document.getElementById('login-go-register').onclick = async e => {
         e.preventDefault();
         location.hash = '#/register';
     }
 };
-
-
-            //alert
-            alert(Welcome, ${user.username}!);
-            location.hash = "#/dashboard";
-        } catch (error) {
-            console.error("login error:", error);
-            alert("Login failed. Please try again later.");
-        }
-    });
-
-    goToRegister?.addEventListener("click", (e) => {
-        e.preventDefault();
-        location.hash = "#/register";
-    });
-}
