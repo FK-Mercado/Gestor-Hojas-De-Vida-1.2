@@ -1,12 +1,19 @@
 {
-    "usuarios": [
-      {
-        "id": 1,
-        "nombre": "Ejemplo",
-        "documento": "123456",
-        "correo": "ejemplo@mail.com",
-        "contrasena": "1234",
-        "rol": "estudiante"
-      }
-    ]
-  }
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Ejemplo",
+      "documento": "123456",
+      "correo": "ejemplo@mail.com",
+      "contrasena": "1234",
+      "rol": "estudiante"
+    },
+    {
+      "id": "2798",
+      "nombre": "queso",
+      "documento": "1235",
+      "correo": "queso@123.com",
+      "contrasena": "queso"
+    }
+  ]
+}
