@@ -26,7 +26,6 @@ export async function renderRoute() {
     }
 
     // render view
-
     app.innerHTML = route.view;
 
     if (route.logic) {

@@ -1,0 +1,29 @@
+<!--Login view-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <section>
+        <div class="login-container">
+            <h2>Iniciar sesión</h2>
+
+            <!--Formulario para ingresar con cuenta creada-->
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Correo" autocomplete="email" required />
+                <input type="password" id="login-password" placeholder="Contraseña" autocomplete="current-password" required />
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <!--Link de redirección a la página de registro si no tiene cuenta-->
+            <p>¿No tienes cuenta?
+                <a href="#" id="login-go-register">Registrate aquí</a>
+            </p>
+        </div>
+    </section>
+</body>
+</html>
