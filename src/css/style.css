@@ -1,0 +1,182 @@
+/* General */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(120deg, #e6f0ff, #f4f4f4);
+    color: #333;
+  }
+  
+  /* Header */
+  .landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3730a3; /* Azul violeta estilo Riwi */
+    padding: 1rem 2rem;
+    color: white;
+  }
+  
+  .landing-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .landing-header nav button {
+    margin-left: 1rem;
+    background-color: white;
+    color: #3730a3;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .landing-header nav button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Main */
+  .landing-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/blue-snow.png'); /* fondo sutil con íconos */
+    background-color: #e6f0ff;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .landing-text {
+    flex: 1 1 45%;
+    padding: 1rem;
+  }
+  
+  .landing-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .landing-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .landing-cta button {
+    background-color: #3730a3;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .landing-cta button:hover {
+    background-color: #2c278e;
+  }
+  
+  /* Imagen */
+  .landing-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .landing-img {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #3730a3;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+/* === ESTILOS SOLO PARA LA VISTA DE REGISTRO === */
+
+#registro {
+    background-color: white;
+    padding: 2.5rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  body:has(#registro) {
+    background-color: #eef3fd;
+    background: linear-gradient(135dge,#441642,#567dca );
+    background-repeat: repeat;
+    background-size: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #registro h1 {
+    margin-bottom: 1.5rem;
+    color: #3730a3;
+    font-size: 1.8rem;
+  }
+  
+  #registro form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 0.6rem 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  #registro form input:focus {
+    border-color: #3730a3;
+    outline: none;
+  }
+  
+  #registro form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3730a3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #registro form button:hover {
+    background-color: #2c278e;
+  }
+  
+  #registro form a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3730a3;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  #registro form a:hover {
+    text-decoration: underline;
+  }
