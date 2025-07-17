@@ -1,3 +1,62 @@
+<header>
+    <h1>ProFail</h1>
+    <input type="search" placeholder="Buscar por nombre o cèdula.">
+    <div class="filters">
+        <label for="skillFilter">Filtros</label>
+        <select id="skillFilterSelect">
+            <option value="Todas las habilidades">Elija un Stack</option>
+            <option value="Fronten">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Full-stack">Full-Stack</option> <!--Nivel de ingles, Habilidades blandas-->
+        </select>
+        <label for="englishStack">Nivel de Inglès</label>
+        <select id="englishLevel">
+            <option value="">N/A</option>
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+            <option value="C2">C2</option>
+        </select>
+        <label for="attitudinal">Perfil actitudinal</label>
+            <select id="attitudinalProfile">Determine el Perfil Actitudinal
+            <option value="">N/A</option>
+            <option value="D">D</option>
+            <option value="DI">D+I</option>
+            <option value="DS">D+S</option>
+            <option value="DC">D+C</option>
+            <option value="DIS">D+I+S</option>
+            <option value="DIC">D+I+C</option>
+            <option value="DSC">D+S+C</option>
+            <option value="I">I</option>
+            <option value="IS">I+S</option>
+            <option value="IC">I+C</option>
+            <option value="ISC">I+S+C</option>
+            <option value="S">S</option>
+            <option value="SC">S+C</option>
+            <option value="C">C</option>
+            <option value="CP">Cuadrado Perfecto</option>
+        </select>
+    </div>
+</header>
+<main><!--Aqui se insertaràn dinamicamente las CV cards-->
+    <ul id="coderList">
+        <!--Aquì se ingresaràn la lista importada de los CV's de los coder /La manipulaciòn se debe
+        hacer desde el dashboard-admin.js-->
+    </ul>
+
+    <div id="hiddenCard" class="modal hidden">
+        <!--Aquì se mostrarà la hoja de vida seleccionada (evento manipulado desde el JS) Esto es una carta oculta-->
+        <!--Tambièn se harà una nueva estilizaciòn para la vista del CV abierta-->
+    </div>
+
+    <button id="dashboardAdminLogout">Logout</button>
+<!---->
+</main>
+
+
+
 <div class="editor-container">
     <!-- Panel de Edición -->
     <div class="editor-panel">
