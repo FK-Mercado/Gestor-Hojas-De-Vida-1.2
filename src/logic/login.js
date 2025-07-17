@@ -1,7 +1,6 @@
 //Funcionalidad del Login.
 
 //Importamos las funciones de api.
-import { api } from '../js/api';    
 //Importamos las funciones de autenticación.
 import { auth } from '../router/auth.js';
 
@@ -22,7 +21,6 @@ export function init() {
         };
 
         try {
-            const users = await api.getAdmin('users');
             const user = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
 
             if (!user) {

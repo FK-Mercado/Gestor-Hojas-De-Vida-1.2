@@ -1,65 +1,31 @@
 {
   "users": [
     {
+      "nombre": "jarfar",
+      "doc": "123546789",
       "email": "mar@gmail.com",
       "password": "123456",
-      "id": "6501"
-    }
-  ],
-  "perfil": [
-    {
-      "idiomas": [],
-      "competenciasTecnicas": [],
-      "id": "50ec"
+      "id": "6501",
+      "rol": "admin"
     },
     {
-      "id": "930e",
-      "nombre": "",
-      "edad": "",
-      "profesion": "",
-      "ciudad": "",
-      "telefono": "",
-      "email": "",
-      "portfolio": "",
-      "perfil": "",
-      "foto": "",
-      "idiomas": [
-        {
-          "nombre": "123",
-          "nivel": "dsaw"
-        }
-      ],
+      "id": "93f0",
+      "usuario": "yiss",
+      "correo": "PIPE@gaillsdn.com",
+      "documento": "123",
+      "contrasena": "123",
+      "rol": "coder"
+    }
+  ],
+  "perfil": [  
+    {
+      "idiomas": [],
       "competenciasTecnicas": [],
       "competenciasHumanas": [],
       "experiencia": [],
       "educacion": []
-    },
-    {
-      "id": "d591",
-      "nombre": "",
-      "edad": "",
-      "profesion": "",
-      "ciudad": "",
-      "telefono": "",
-      "email": "",
-      "portfolio": "",
-      "perfil": "",
-      "foto": "",
-      "idiomas": [],
-      "competenciasTecnicas": [
-        "fasfasaf"
-      ],
-      "competenciasHumanas": [],
-      "experiencia": [],
-      "educacion": [
-        {
-          "institucion": "",
-          "titulo": "",
-          "periodo": ""
-        }
-      ]
     }
   ],
   "resume": [],
-  "": []
+  " ": []
 }
