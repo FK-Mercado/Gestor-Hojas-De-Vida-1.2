@@ -10,6 +10,11 @@ export function innit () {
   const $emailInput = document.getElementById('correo');
   const $passwordInput = document.getElementById('contrasena');
 
+  
+  $idNumberInput.addEventListener('input', () => {
+    $idNumberInput.value = $idNumberInput.value.replace(/\D/g, '');
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -17,6 +22,16 @@ export function innit () {
     const idNumber = $idNumberInput.value.trim();
     const email = $emailInput.value.trim();
     const password = $passwordInput.value;
+
+    if (!name || !idNumber || !email || !password) {
+      alert("Por favor, complete todos los campos.");
+      return;
+    }
+
+    if (!/^\d+$/.test(idNumber)) {
+      alert("El campo documento debe contener solo números.");
+      return;
+    }
 
     const newUser = {
       name,
@@ -27,22 +42,28 @@ export function innit () {
 
     try {
       const users = await api.getAdmin('users');
-      const user = users.find((u) => u.email.toLowerCase() === newUser.email.toLowerCase());
+      const userExist = users.find((u) => u.email.toLowerCase() === newUser.email.toLowerCase());
 
-      if (user === newUser.email) {
+      if (userExist) {
         alert("El usuario ya se encuentra registrado. Por favor ingrese desde el login");
-        location.hash = '#/login'
+        location.hash = '#/login';
         return;
       };
 
-      const 
+      await api.post('users', newUser);
+      
+      alert("El usuario ha sido registrado correctamente");
+      location.hash = '#/login';
 
 
     } catch (error) {
       console.log("register error:", error);
-      alert("Falla en el Register, por favor intente más tarde")
+      alert("Falla en el Register, por favor intente más tarde");
     };
-    
-  );};
- }
 
+    document.getElementById('btn-register').onclick = async e => {
+      e.preventDefault();
+      location.hash = '#/login';
+    };
+  }
+)};
