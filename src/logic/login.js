@@ -43,13 +43,13 @@ export function init() {
 
         } catch (error) {
             console.log("login error:", error);
-            alert("falla en el Login, por favor intente más tarde")
-        }
+            alert("Falla en el Login, por favor intente más tarde")
+        };
 
     });
 
     document.getElementById('login-go-register').onclick = async e => {
         e.preventDefault();
         location.hash = '#/register';
-    }
+    };
 };

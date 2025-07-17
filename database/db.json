@@ -2,6 +2,7 @@
   "users": [
     {
       "email": "mar@gmail.com",
+<<<<<<< HEAD
       "password": "1234"
     }
   ],
@@ -13,4 +14,66 @@
   "resume":[
 
   ]
+=======
+      "password": "123456",
+      "id": "6501"
+    }
+  ],
+  "perfil": [
+    {
+      "idiomas": [],
+      "competenciasTecnicas": [],
+      "id": "50ec"
+    },
+    {
+      "id": "930e",
+      "nombre": "",
+      "edad": "",
+      "profesion": "",
+      "ciudad": "",
+      "telefono": "",
+      "email": "",
+      "portfolio": "",
+      "perfil": "",
+      "foto": "",
+      "idiomas": [
+        {
+          "nombre": "123",
+          "nivel": "dsaw"
+        }
+      ],
+      "competenciasTecnicas": [],
+      "competenciasHumanas": [],
+      "experiencia": [],
+      "educacion": []
+    },
+    {
+      "id": "d591",
+      "nombre": "",
+      "edad": "",
+      "profesion": "",
+      "ciudad": "",
+      "telefono": "",
+      "email": "",
+      "portfolio": "",
+      "perfil": "",
+      "foto": "",
+      "idiomas": [],
+      "competenciasTecnicas": [
+        "fasfasaf"
+      ],
+      "competenciasHumanas": [],
+      "experiencia": [],
+      "educacion": [
+        {
+          "institucion": "",
+          "titulo": "",
+          "periodo": ""
+        }
+      ]
+    }
+  ],
+  "resume": [],
+  "": []
+>>>>>>> ee9285a6f84d7a00ba45210e8680f5e1661a58fe
 }
