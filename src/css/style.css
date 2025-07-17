@@ -1,3 +1,6 @@
+
+
+
 /* General */
 body {
     margin: 0;
@@ -181,7 +184,6 @@ body {
     text-decoration: underline;
   }
 
-   /*===ESTILOS PARA EL CODIGO ERROR 404===*//* Estilo para la vista 404 */
 .not-found {
   display: flex;
   align-items: center;
