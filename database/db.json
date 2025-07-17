@@ -6,15 +6,19 @@
         }
     ],
     
-    "perfil":[
-
-    ],
     
-    "resume":[
+  "perfil": [
+    {
+      "idiomas": [],
+      "competenciasTecnicas": []
+    }
+     ],
 
-    ],
-
-    "":[
-
-    ]
+    "resume":[],
+    "":[]
 }
+
+    
+
+
+    
