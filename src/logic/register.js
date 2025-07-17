@@ -1,39 +1,48 @@
-// src/logic/register.js
+//Funcionalidad del Register.
 
-const API_URL = "http://localhost:3000/usuarios"; // Ajusta si tu endpoint cambia
+//Importamos las funciones de api.
+import { api } from '../js/api.js';
 
-document.getElementById("formRegistroUsuario").addEventListener("submit", async (e) => {
-  e.preventDefault();
+export function innit () {
+  const form = document.getElementById('formRegistroUsuario');
+  const $nameInput = document.getElementById('nombre');
+  const $idNumberInput = document.getElementById('documento');
+  const $emailInput = document.getElementById('correo');
+  const $passwordInput = document.getElementById('contrasena');
 
-  const nombre = document.getElementById("nombre").value.trim();
-  const documento = document.getElementById("documento").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const contrasena = document.getElementById("contrasena").value.trim();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const nuevoUsuario = {
-    nombre,
-    documento,
-    correo,
-    contrasena
-  };
+    const name = $nameInput.value.trim();
+    const idNumber = $idNumberInput.value.trim();
+    const email = $emailInput.value.trim();
+    const password = $passwordInput.value;
 
-  try {
-    const respuesta = await fetch("http://localhost:3000/usuarios", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(nuevoUsuario)
-    });
+    const newUser = {
+      name,
+      idNumber,
+      email,
+      password
+    };
 
-    if (!respuesta.ok) {
-      throw new Error("Error al registrar usuario");
-    }
+    try {
+      const users = await api.getAdmin('users');
+      const user = users.find((u) => u.email.toLowerCase() === newUser.email.toLowerCase());
 
-    alert("¡Usuario registrado con éxito!");
-    document.getElementById("formRegistroUsuario").reset();
-  } catch (error) {
-    console.error("Error al guardar usuario:", error);
-    alert("Hubo un error al registrar. Intenta nuevamente.");
-  }
-});
+      if (user === newUser.email) {
+        alert("El usuario ya se encuentra registrado. Por favor ingrese desde el login");
+        location.hash = '#/login'
+        return;
+      };
+
+      const 
+
+
+    } catch (error) {
+      console.log("register error:", error);
+      alert("Falla en el Register, por favor intente más tarde")
+    };
+    
+  );};
+ }
+
