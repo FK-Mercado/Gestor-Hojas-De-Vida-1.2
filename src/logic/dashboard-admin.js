@@ -1,10 +1,10 @@
 import { api } from "../js/api";
 
 
-const fotoInput = document.getElementById("foto");
-const vistaPrevia = document.getElementById("vista-previa");
 
 export async function init() {
+  const fotoInput = document.getElementById("foto");
+  const vistaPrevia = document.getElementById("vista-previa");
 
   fotoInput.addEventListener("change", () => {
       const archivo = fotoInput.files[0];

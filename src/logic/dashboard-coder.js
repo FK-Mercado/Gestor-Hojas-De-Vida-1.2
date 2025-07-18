@@ -1,5 +1,7 @@
 // Esperar a que se cargue el DOM
 document.addEventListener('DOMContentLoaded', function () {
+  
+  
   console.log('DOM cargado correctamente');
 
   // Elementos del DOM

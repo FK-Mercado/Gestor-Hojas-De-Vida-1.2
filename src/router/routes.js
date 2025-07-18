@@ -19,7 +19,7 @@ export const routePath={
         view: register, 
     logic: () => import("../logic/register.js")
     },
-    '/dashboard':{
+    '/dashboard-admin':{
         view: dashboard_admin, 
         logic: () => import("../logic/dashboard-admin.js") 
     },
