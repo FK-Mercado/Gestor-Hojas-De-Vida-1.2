@@ -4,56 +4,60 @@ import { api } from "../js/api";
 const fotoInput = document.getElementById("foto");
 const vistaPrevia = document.getElementById("vista-previa");
 
+export async function init() {
 
-fotoInput.addEventListener("change", () => {
+  fotoInput.addEventListener("change", () => {
+      const archivo = fotoInput.files[0];
+      if (archivo) {
+          const lector = new FileReader();
+          lector.onload = () => {
+              vistaPrevia.src = lector.result;
+          };
+          lector.readAsDataURL(archivo);
+      }
+  });
+
+  // Guardar datos al servidor
+  function guardarDatos() {
+    const lector = new FileReader();
     const archivo = fotoInput.files[0];
-    if (archivo) {
-        const lector = new FileReader();
-        lector.onload = () => {
-            vistaPrevia.src = lector.result;
-        };
-        lector.readAsDataURL(archivo);
+
+    if (!archivo) {
+      alert("Por favor selecciona una imagen.");
+      return;
     }
-});
 
-// Guardar datos al servidor
-function guardarDatos() {
-  const lector = new FileReader();
-  const archivo = fotoInput.files[0];
+    lector.onload = () => {
+      const datos = {
+        nombre: nombreInput.value,
+        edad: edadInput.value,
+        perfil: perfilInput.value,
+        foto: lector.result
+      };
 
-  if (!archivo) {
-    alert("Por favor selecciona una imagen.");
-    return;
-  }
+      fetch("http://localhost:3000/perfil")
+        .then(res => res.json())
+        .then(perfiles => {
+          const id = perfiles.length ? perfiles[0].id : null;
 
-  lector.onload = () => {
-    const datos = {
-      nombre: nombreInput.value,
-      edad: edadInput.value,
-      perfil: perfilInput.value,
-      foto: lector.result
+          const metodo = id ? "PUT" : "POST";
+          const url = id
+            ? `http://localhost:3000/perfil/${id}`
+            : "http://localhost:3000/perfil";
+
+          fetch(url, {
+            method: metodo,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datos)
+          }).then(() => {
+            mostrarDatos(datos);
+            alert("Datos guardados exitosamente.");
+          });
+        });
     };
 
-    fetch("http://localhost:3000/perfil")
-      .then(res => res.json())
-      .then(perfiles => {
-        const id = perfiles.length ? perfiles[0].id : null;
-
-        const metodo = id ? "PUT" : "POST";
-        const url = id
-          ? `http://localhost:3000/perfil/${id}`
-          : "http://localhost:3000/perfil";
-
-        fetch(url, {
-          method: metodo,
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(datos)
-        }).then(() => {
-          mostrarDatos(datos);
-          alert("Datos guardados exitosamente.");
-        });
-      });
+    lector.readAsDataURL(archivo);
   };
 
-  lector.readAsDataURL(archivo);
-}
+  
+};

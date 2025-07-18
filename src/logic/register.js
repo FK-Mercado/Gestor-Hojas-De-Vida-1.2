@@ -11,6 +11,7 @@ const $cedula = document.getElementById("documento");
 const $password = document.getElementById("contrasena");
 const $register = document.getElementById("btn-register")
 console.log("data")
+
 async function registerUser() {
 
   const registrar = {
